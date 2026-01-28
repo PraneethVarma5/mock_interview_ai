@@ -5,3 +5,5 @@ python-dotenv
 python-multipart
 google-generativeai
 typing-extensions
+pypdf
+python-docx
