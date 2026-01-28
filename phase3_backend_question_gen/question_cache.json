@@ -1,0 +1,115 @@
+{
+  "07aa3271ab8e383b179ca655a8764d19": [
+    {
+      "id": 1,
+      "text": "You have an 'Elite Certification in Java Programming'. Can you explain the four core principles of Object-Oriented Programming (OOP) in Java and provide a simple real-world example for each?",
+      "type": "technical",
+      "difficulty": "medium",
+      "context": "NPTEL: \u2022 Elite Certification in Java Programming, Technical Skills : \u2022 Java Programming"
+    },
+    {
+      "id": 2,
+      "text": "Given your proficiency in Python, write a function that takes a list of integers and returns a new list containing only the even numbers from the original list, maintaining their relative order. If the input list is empty, return an empty list.",
+      "type": "coding",
+      "difficulty": "easy",
+      "context": "Technical Skills : \u2022 Python Programming",
+      "initial_code": "def get_even_numbers(numbers):\n    # Your code here\n    pass"
+    },
+    {
+      "id": 3,
+      "text": "Your resume lists 'Adaptability & Flexibility' and 'Quick Learner' as soft skills. Can you describe a situation, perhaps from your academic studies or a self-learning experience, where you had to quickly adapt to a new technology or approach to solve a problem?",
+      "type": "behavioral",
+      "difficulty": "easy",
+      "context": "Soft Skills : \u2022 Quick Learner \u2022 Adaptability & Flexibility, CAREER OBJECTIVE: I strive for continuous improvement of my technical expertise."
+    },
+    {
+      "id": 4,
+      "text": "In your Deloitte job simulation, you 'used Excel to classify data and draw business conclusions'. Can you elaborate on the types of classification you performed and how you translated those classifications into actionable business insights? What challenges did you face in this process?",
+      "type": "technical",
+      "difficulty": "medium",
+      "context": "DELOITTE : \u2022 Completed a Deloitte job simulation involving data analysis and forensic technology \u2022 Used Excel to classify data and draw business conclusions"
+    },
+    {
+      "id": 5,
+      "text": "Your career objective mentions 'contributing for the purposes of impactful, revolutionary solutions while I build a strong data-driven career.' How do you see a Software Engineer role aligning with this long-term goal, especially considering your background in Data Science?",
+      "type": "behavioral",
+      "difficulty": "easy",
+      "context": "CAREER OBJECTIVE: My long-term goal is contributing for the purposes of impactful, revolutionary solutions while I build a strong data-driven career."
+    }
+  ],
+  "81e1c16972fe28de6840374361ed18ab": [
+    {
+      "id": 1,
+      "text": "In your Deloitte job simulation, you mentioned using Excel to classify data and draw business conclusions, and also working with data analysis. Can you describe a scenario from this simulation where you had to classify data, and what SQL concepts or techniques you might use to perform a similar classification and derive insights from a larger dataset?",
+      "type": "technical",
+      "difficulty": "medium",
+      "context": "DELOITTE : Completed a Deloitte job simulation involving data analysis...Used Excel to classify data and draw business conclusions, Technical Skills : SQL"
+    },
+    {
+      "id": 2,
+      "text": "Given an array of integers, write a function in Python (or Java, if you prefer) that returns the sum of all positive numbers in the array. For example, if the input is `[1, -4, 7, 12]`, the output should be `20`.",
+      "type": "coding",
+      "difficulty": "easy",
+      "context": "Technical Skills : Python Programming, Technical Skills : Java Programming",
+      "initial_code": "def sum_positive_numbers(arr):\n    # Your code here\n    pass"
+    },
+    {
+      "id": 3,
+      "text": "Your career objective mentions a strive for continuous improvement of your technical expertise and problem-solving skills. Can you give an example of a specific technical skill or problem-solving challenge you've encountered recently (e.g., in an academic project or self-study) and how you approached improving or solving it?",
+      "type": "behavioral",
+      "difficulty": "easy",
+      "context": "CAREER OBJECTIVE: I strive for continuous improvement of my technical expertise. I also wish to improve my skills in problem-solving."
+    },
+    {
+      "id": 4,
+      "text": "You have an Elite Certification in Java Programming. Can you explain the four pillars of Object-Oriented Programming (OOP) with real-world examples in Java?",
+      "type": "technical",
+      "difficulty": "medium",
+      "context": "CERTIFICATIONS: NPTEL: Elite Certification in Java Programming, Technical Skills : Java Programming"
+    },
+    {
+      "id": 5,
+      "text": "You list 'Quick Learner' and 'Adaptability & Flexibility' as soft skills. Can you describe a situation, perhaps from your Deloitte job simulation or an academic project, where you had to quickly learn a new technology or adapt to a changing requirement? What was the outcome?",
+      "type": "behavioral",
+      "difficulty": "medium",
+      "context": "Soft Skills : Quick Learner, Soft Skills : Adaptability & Flexibility, DELOITTE : Completed a Deloitte job simulation"
+    }
+  ],
+  "de7b0ad6ae7be690d242b51e3c34e444": [
+    {
+      "id": 1,
+      "text": "You have an Elite Certification in Java Programming. Can you describe a scenario where you applied a key Object-Oriented Programming (OOP) concept from your Java studies to solve a specific programming problem? Please elaborate on the problem and your solution.",
+      "type": "technical",
+      "difficulty": "medium",
+      "context": "[Resume-Deep Dive] Reason for this question: (Elite Certification in Java Programming)"
+    },
+    {
+      "id": 2,
+      "text": "During your Deloitte job simulation, you used Excel to classify data and draw business conclusions. Can you walk me through an example of a specific business conclusion you drew and explain the steps you took to classify the data in Excel to support that conclusion?",
+      "type": "technical",
+      "difficulty": "medium",
+      "context": "[Resume-Deep Dive] Reason for this question: (DELOITTE: Completed a Deloitte job simulation involving data analysis and forensic technology... Used Excel to classify data and draw business conclusions)"
+    },
+    {
+      "id": 3,
+      "text": "While your resume highlights strong programming skills, modern software development heavily relies on collaborative tools. Can you describe your experience with version control systems like Git? If you haven't used Git extensively, how would you approach learning it quickly to contribute to a team project?",
+      "type": "technical",
+      "difficulty": "medium",
+      "context": "[JD-Alignment] Reason for this question: No Job Description provided. This question targets a critical skill for Software Engineers (version control) that is not explicitly mentioned on the resume, testing adaptability and fundamental SE practices."
+    },
+    {
+      "id": 4,
+      "text": "Beyond just defining them, explain the practical implications and benefits of the four main principles of Object-Oriented Programming (Encapsulation, Inheritance, Abstraction, Polymorphism) in designing scalable and maintainable software systems. Provide a simple example for at least two of these principles.",
+      "type": "technical",
+      "difficulty": "hard",
+      "context": "[Industry Standards] Reason for this question: Fundamental Object-Oriented Programming principles are crucial for any Software Engineer, especially given the candidate's Java and Python skills."
+    },
+    {
+      "id": 5,
+      "text": "Your career objective mentions building a strong data-driven career, but you're applying for a Software Engineer role. How do you see the Software Engineer role aligning with your long-term goals, and what aspects of software engineering are you most eager to learn or contribute to?",
+      "type": "behavioral",
+      "difficulty": "easy",
+      "context": "[HR & Behavioral] Reason for this question: Understanding the candidate's career motivation and fit for a Software Engineer role, especially with a Data Science background, and assessing their approach to continuous improvement (from career objective: 'strive for continuous improvement of my technical expertise')."
+    }
+  ]
+}
