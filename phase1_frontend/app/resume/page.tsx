@@ -18,6 +18,7 @@ export default function ResumeUploadPage() {
         context: string;
         initial_code?: string;
     }
+    const API_BASE = "https://mock-interview-ai-z71d.onrender.com";
 
     const [questions, setQuestions] = useState<Question[]>([]);
     const [showConfig, setShowConfig] = useState(false);
@@ -152,7 +153,9 @@ export default function ResumeUploadPage() {
             formData.append("file", file);
 
             // 1. Upload Resume
-            const uploadRes = await fetch("http://localhost:8000/upload_resume", {
+            const uploadRes = await fetch(`${API_BASE}/upload_resume`, {
+
+
                 method: "POST",
                 body: formData,
             });
@@ -179,7 +182,9 @@ export default function ResumeUploadPage() {
 
         try {
             // 2. Generate Questions with custom parameters
-            const qcRes = await fetch("http://localhost:8000/generate_questions", {
+            const qcRes = await fetch(`${API_BASE}/generate_questions`, {
+
+
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -262,7 +267,9 @@ export default function ResumeUploadPage() {
             // but parallel would be faster. Let's do parallel for better speed.
             const evaluationPromises = questions.map(async (q, index) => {
                 const answer = answers[index] || "No answer provided.";
-                const res = await fetch("http://localhost:8000/evaluate_answer", {
+                const res = await fetch(`${API_BASE}/evaluate_answer`, {
+
+
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ question: q.text, answer })
