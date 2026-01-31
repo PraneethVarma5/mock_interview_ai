@@ -162,45 +162,42 @@ export default function ResumeUploadPage() {
         return () => clearInterval(timer);
     }, [isTimerEnabled, currentQuestionIndex, questions.length, isInterviewComplete, isEvaluating]);
 
-    const handleUpload = async () => {
-        if (!file) return;
-        setIsLoading(true);
+const handleUpload = async () => {
+  if (!file) return;
+  setIsLoading(true);
 
-        try {
-            const formData = new FormData();
-            formData.append("file", file);
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
 
-            // 1. Upload Resume
-            const uploadRes = await fetchWithTimeout(`${API_BASE}/upload_resume`, {
+    const uploadRes = await fetchWithTimeout(
+      `${API_BASE}/upload_resume`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
+    if (!uploadRes.ok) {
+      const errorData = await uploadRes.json().catch(() => ({}));
+      throw new Error(errorData.detail || "Upload failed");
+    }
 
+    const data = await uploadRes.json();
+    setExtractedText(data.extracted_text);
+    setShowConfig(true);
+  } catch (error: any) {
+    console.error(error);
 
-                method: "POST",
-                body: formData,
-            });
-
-            if (!uploadRes.ok) {
-                const errorData = await uploadRes.json().catch(() => ({}));
-                throw new Error(errorData.detail || "Upload failed");
-            }
-
-            const data = await uploadRes.json();
-            setExtractedText(data.extracted_text);
-            setShowConfig(true); // Show configuration screen
-
-        } catch (error: any) {
-            console.error(error);
-            if (error.name === "AbortError") {
-                alert("Server is waking up. Please wait 20–30 seconds and try again.");
-            } else {
-                alert("Error processing resume: " + (error.message || "Network error"));
-            }
-        }
-
-    }finally {
-            setIsLoading(false);
-        }
-    };
+    if (error.name === "AbortError") {
+      alert("Server is waking up. Please wait 20–30 seconds and try again.");
+    } else {
+      alert("Error processing resume: " + (error.message || "Network error"));
+    }
+  } finally {
+    setIsLoading(false);
+  }
+};
 
     const handleGenerateQuestions = async () => {
         setIsLoading(true);
