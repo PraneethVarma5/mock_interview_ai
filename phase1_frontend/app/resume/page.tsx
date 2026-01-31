@@ -1,10 +1,28 @@
 "use client";
 
+
 import { useState, useEffect, useCallback, type DragEvent, type ChangeEvent } from "react";
 import Link from "next/link";
 import { Upload, CheckCircle2, ArrowRight, Mic, MicOff, Volume2, VolumeX, Home, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const fetchWithTimeout = async (
+  url: string,
+  options: RequestInit,
+  timeout = 90000
+) => {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(id);
+  }
+};
 
 export default function ResumeUploadPage() {
     const [isDragging, setIsDragging] = useState(false);
@@ -153,7 +171,8 @@ export default function ResumeUploadPage() {
             formData.append("file", file);
 
             // 1. Upload Resume
-            const uploadRes = await fetch(`${API_BASE}/upload_resume`, {
+            const uploadRes = await fetchWithTimeout(`${API_BASE}/upload_resume`, {
+
 
 
                 method: "POST",
@@ -171,8 +190,14 @@ export default function ResumeUploadPage() {
 
         } catch (error: any) {
             console.error(error);
-            alert("Error processing resume: " + error.message);
-        } finally {
+            if (error.name === "AbortError") {
+                alert("Server is waking up. Please wait 20–30 seconds and try again.");
+            } else {
+                alert("Error processing resume: " + (error.message || "Network error"));
+            }
+        }
+
+    }finally {
             setIsLoading(false);
         }
     };
@@ -182,7 +207,8 @@ export default function ResumeUploadPage() {
 
         try {
             // 2. Generate Questions with custom parameters
-            const qcRes = await fetch(`${API_BASE}/generate_questions`, {
+            const qcRes = await fetchWithTimeout(`${API_BASE}/generate_questions`, {
+
 
 
                 method: "POST",
@@ -267,7 +293,8 @@ export default function ResumeUploadPage() {
             // but parallel would be faster. Let's do parallel for better speed.
             const evaluationPromises = questions.map(async (q, index) => {
                 const answer = answers[index] || "No answer provided.";
-                const res = await fetch(`${API_BASE}/evaluate_answer`, {
+                const res = await fetchWithTimeout(`${API_BASE}/evaluate_answer`, {
+
 
 
                     method: "POST",
