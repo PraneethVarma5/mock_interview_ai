@@ -48,8 +48,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=[
+        "https://ai-mock-interview-129d.onrender.com",
+        "http://localhost:3000"
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -83,6 +86,10 @@ except Exception as e:
 @app.api_route("/", methods=["GET", "HEAD", "OPTIONS"])
 def read_root():
     return {"message": "AI Mock Interview Backend is Running"}
+
+@app.options("/{path:path}")
+def options_handler(path: str):
+    return {}
 
 @app.post("/upload_resume")
 async def upload_resume(file: UploadFile = File(...)):
@@ -194,6 +201,7 @@ def evaluate_answer(data: dict):
     except Exception as e:
         print(f"Evaluation Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
 
 if __name__ == "__main__":
     import uvicorn
