@@ -80,7 +80,7 @@ except Exception as e:
     print(f"Warning: Failed to initialize QuestionGenerator: {e}")
     question_generator = None
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD", "OPTIONS"])
 def read_root():
     return {"message": "AI Mock Interview Backend is Running"}
 
